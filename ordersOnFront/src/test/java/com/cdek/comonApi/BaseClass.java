@@ -1,7 +1,9 @@
 package com.cdek.comonApi;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -15,7 +17,7 @@ public class BaseClass {
     public void initChromedriver() {
       System.setProperty("webdriver.chrome.driver", "C://Tools/chromedriver.exe");
       driver = new ChromeDriver();
-      driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     public void clickOrder() {
@@ -23,16 +25,22 @@ public class BaseClass {
     }
 
     public void findOrder() {
-      driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Номер заказа'])[1]/following::input[1]")).sendKeys("1105673653");
-      driver.findElement(By.name("vm.filterForm")).submit();
+      //driver.findElement(By.xpath("//*[@id=\"filter_field_orderNumber\"]")).sendKeys("1105673653");
+      driver.findElement(By.cssSelector("#filter_field_orderNumber")).sendKeys("110567653");
+        driver.findElement(By.name("vm.filterForm")).submit();
     }
 
     public void openOrderList() {
-      driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Справка'])[1]/preceding::span[3]")).click();
-      driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)=concat('ООО ', '\"', 'СДЭК-Новоcибирск', '\"', '')])[1]/following::span[2]")).click();
-      driver.findElement(By.id("menuOrder")).click();
-      driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Номер заказа'])[1]/following::input[1]")).click();
-      driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Номер заказа'])[1]/following::input[1]")).clear();
+      driver.findElement(By.id("overMainHeader")).click();
+      driver.findElement(By.xpath("//*[@id=\"menuDelivery\"]")).click();
+        fixCoveredElement("//*[@id=\"menuOrder\"]");
+    }
+
+    public void fixCoveredElement(String elementPath) {
+        elementPath = elementPath;
+        WebElement ele = driver.findElement(By.xpath(elementPath));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", ele);
     }
 
     public void navfrontAuth() {
