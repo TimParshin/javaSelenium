@@ -26,8 +26,11 @@ public class BaseClass {
 
     public void findOrder() {
       //driver.findElement(By.xpath("//*[@id=\"filter_field_orderNumber\"]")).sendKeys("1105673653");
-      driver.findElement(By.cssSelector("#filter_field_orderNumber")).sendKeys("110567653");
-        driver.findElement(By.name("vm.filterForm")).submit();
+      WebElement frame = driver.findElement(By.xpath("//iframe[5]"));
+        driver.switchTo().frame(frame);
+      driver.switchTo().frame("gate");
+      driver.findElement(By.id("filter_field_orderNumber")).sendKeys("110567653");
+      driver.findElement(By.name("vm.filterForm")).submit();
     }
 
     public void openOrderList() {
