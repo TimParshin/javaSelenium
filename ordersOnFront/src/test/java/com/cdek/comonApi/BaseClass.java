@@ -21,17 +21,17 @@ public class BaseClass {
         driver.findElement(By.linkText("1105673653")).click();
     }
 
-    public void findOrder() {
-        //driver.findElement(By.xpath("//*[@id=\"filter_field_orderNumber\"]")).sendKeys("1105673653");
+    public void findOrder(String cdekNumber) {
         WebElement frame = driver.findElement(By.xpath("//*[@id[contains(.,'ifrm_menuOrder')]]"));
         driver.switchTo().frame(frame);
         driver.switchTo().frame("gate");
+        //
         WebElement orderNumberField = driver.findElement(By.xpath("//*[@id=\"filter_field_orderNumber\"]/div/input"));
-        orderNumberField.sendKeys("110567653");
+        String cdekNumber = "cdekNumber";
+        orderNumberField.sendKeys(cdekNumber);
         orderNumberField.sendKeys(Keys.ENTER);
         WebElement searchButton = driver.findElement(By.xpath("//*[@id=\"findButtonOrder\"]"));
         searchButton.click();
-        //driver.findElement(By.name("vm.filterForm")).submit();
     }
 
     public void openOrderList() {

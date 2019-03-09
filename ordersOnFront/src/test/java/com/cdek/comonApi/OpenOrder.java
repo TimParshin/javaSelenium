@@ -21,7 +21,7 @@ public class OpenOrder {
   @Test
   public void openOrder() throws Exception {
     baseClass.openOrderList();
-    baseClass.findOrder();
+    baseClass.findOrder("1105673653");
     baseClass.clickOrder();
   }
 
