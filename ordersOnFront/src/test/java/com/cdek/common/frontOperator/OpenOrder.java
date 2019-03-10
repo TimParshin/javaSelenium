@@ -1,4 +1,4 @@
-package com.cdek.comonApi;
+package com.cdek.common.frontOperator;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;

@@ -1,4 +1,4 @@
-package com.cdek.comonApi;
+package com.cdek.common.frontOperator;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
