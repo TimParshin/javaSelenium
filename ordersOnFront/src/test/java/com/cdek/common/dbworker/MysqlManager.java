@@ -1,5 +1,6 @@
 package com.cdek.common.dbworker;
 
+import com.cdek.common.dataModel.OrderData;
 import org.testng.annotations.Test;
 
 import java.sql.*;
@@ -49,17 +50,25 @@ public class MysqlManager {
                     "'CommonAutoFirst000008',\n" +
                     "'CommonAutoFirst000009',\n" +
                     "'CommonAutoFirst000010');";
-            ResultSet rs = st.executeQuery(query);
-            while (rs.next()) [
-                    .add(new GroupData().with)]
 
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                String numberOrd = new OrderData().getNumberOrd(rs.getString("NumberOrd"));
+                System.out.println(numberOrd);
+            }
+
+            rs.close();
+            st.close();
+            conn.close();
+            
         } catch (
                 SQLException ex) {
             // handle any errors
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
-        }}
+        }
+    }
 
 
 }
