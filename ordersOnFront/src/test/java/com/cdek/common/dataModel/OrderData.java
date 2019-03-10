@@ -20,78 +20,79 @@ public class OrderData {
     Double weightBrutto;
     String link;
 
-    public String getNumberOrd (String numberOrd) {
+    public OrderData setNumberOrd (String numberOrd) {
         this.numberOrd = numberOrd;
-        return numberOrd;
+        return this;
     }
 
-    public String getNumberIn (String numberIn) {
+    public OrderData setNumberIn (String numberIn) {
         this.numberIn = numberIn;
-        return numberIn;
+        return this;
     }
 
-    public String getSellerAddress (String sellerAddress) {
+    public OrderData setSellerAddress (String sellerAddress) {
         this.sellerAddress = sellerAddress;
-        return sellerAddress;
+        return this;
     }
 
-    public String getShipperName (String shipperName) {
+    public OrderData setShipperName (String shipperName) {
         this.shipperName = shipperName;
-        return shipperName;
+        return this;
     }
 
-    public String getShipperAddress (String shipperAddress) {
+    public OrderData setShipperAddress (String shipperAddress) {
         this.shipperAddress = shipperAddress;
-        return shipperAddress;
+        return this;
     }
 
-    public Date getDateInvoice(Date dateInvoice) {
+    public OrderData setDateInvoice(Date dateInvoice) {
         this.dateInvoice = dateInvoice;
-        return dateInvoice;
+        return this;
     }
 
-    public String getTaxpayerIdentificationNumber (String taxpayerIdentificationNumber) {
+    public OrderData setTaxpayerIdentificationNumber (String taxpayerIdentificationNumber) {
         this.taxpayerIdentificationNumber = taxpayerIdentificationNumber;
-        return taxpayerIdentificationNumber;
+        return this;
     }
 
-    public String getPasSer(String pasSer) {
+    public OrderData getPasSer(String pasSer) {
         this.pasSer = pasSer;
-        return pasSer;
+        return this;
     }
 
-    public String getPasNum(String pasNum) {
+    public OrderData setPasNum(String pasNum) {
         this.pasNum = pasNum;
-        return pasNum;
+        return this;
     }
 
-    public Date getDateIssue(Date dateIssue) {
+    public OrderData setDateIssue(Date dateIssue) {
         this.dateIssue = dateIssue;
-        return dateIssue;
+        return this;
     }
 
-    public String getIssuedBy(String issuedBy) {
+    public OrderData setIssuedBy(String issuedBy) {
         this.issuedBy = issuedBy;
-        return issuedBy;
+        return this;
     }
 
-    public Date getDateOfBirth(Date dateOfBirth) {
+    public OrderData setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
-        return dateOfBirth;
+        return this;
     }
 
-    public String getNameEx(String nameEx) {
+    public OrderData setNameEx(String nameEx) {
         this.nameEx = nameEx;
-        return nameEx;
+        return this;
     }
 
-    public Double getWeightBrutto(Double weightBrutto) {
+    public OrderData setWeightBrutto(Double weightBrutto) {
         this.weightBrutto = weightBrutto;
-        return weightBrutto;
+        return this;
     }
 
-    public String getLink(String link) {
+    public OrderData getLink(String link) {
         this.link = link;
-        return link;
+        return this;
     }
+
 }
