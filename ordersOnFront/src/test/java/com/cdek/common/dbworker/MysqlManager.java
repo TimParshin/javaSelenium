@@ -53,14 +53,18 @@ public class MysqlManager {
 
             ResultSet rs = st.executeQuery(query);
             while (rs.next()) {
-                String numberOrd = new OrderData().getNumberOrd(rs.getString("NumberOrd"));
-                System.out.println(numberOrd);
+                OrderData order = new OrderData().setNumberOrd(rs.getString("NumberOrd"))
+                        .setNumberIn(rs.getString("NumberIn"))
+                        .setSellerAddress(rs.getString("SellerAddress"))
+                        .setShipperName(rs.getString("ShipperName"));
+                // Дописать все поля
+                System.out.println(order);
             }
 
             rs.close();
             st.close();
             conn.close();
-            
+
         } catch (
                 SQLException ex) {
             // handle any errors
