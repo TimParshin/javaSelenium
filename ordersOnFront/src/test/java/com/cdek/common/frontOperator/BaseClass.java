@@ -27,7 +27,6 @@ public class BaseClass {
         driver.switchTo().frame("gate");
         //
         WebElement orderNumberField = driver.findElement(By.xpath("//*[@id=\"filter_field_orderNumber\"]/div/input"));
-        String cdekNumber = "cdekNumber";
         orderNumberField.sendKeys(cdekNumber);
         orderNumberField.sendKeys(Keys.ENTER);
         WebElement searchButton = driver.findElement(By.xpath("//*[@id=\"findButtonOrder\"]"));
