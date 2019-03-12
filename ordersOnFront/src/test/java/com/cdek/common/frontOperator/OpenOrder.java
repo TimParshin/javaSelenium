@@ -22,7 +22,7 @@ public class OpenOrder {
   public void openOrder() throws Exception {
     baseClass.openOrderList();
     baseClass.findOrder("1105673653");
-    baseClass.clickOrder();
+    baseClass.checkOrder();
   }
 
   @AfterMethod(alwaysRun = true)

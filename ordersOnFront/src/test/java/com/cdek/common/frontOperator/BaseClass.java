@@ -17,8 +17,14 @@ public class BaseClass {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    public void clickOrder() {
-        driver.findElement(By.linkText("1105673653")).click();
+    public void checkOrder() {
+
+        WebElement frame = driver.findElement(By.xpath("//*[@id[contains(.,'ifrm_order')]]"));
+        driver.switchTo().frame(frame);
+        driver.switchTo().frame("gate");
+        //
+        String shopNumber = driver.findElement(By.id("shopNumberDep")).getText();
+        System.out.println(shopNumber);
     }
 
     public void findOrder(String cdekNumber) {
@@ -31,6 +37,7 @@ public class BaseClass {
         orderNumberField.sendKeys(Keys.ENTER);
         WebElement searchButton = driver.findElement(By.xpath("//*[@id=\"findButtonOrder\"]"));
         searchButton.click();
+        driver.findElement(By.linkText("1105673653")).click();
     }
 
     public void openOrderList() {
